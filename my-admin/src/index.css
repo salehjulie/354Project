@@ -67,3 +67,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.navbar{
+  background-color: olive;
+}
+.nav-link{
+  color: white;
+}
+.navbar-brand{
+  color: white;
+
+}
