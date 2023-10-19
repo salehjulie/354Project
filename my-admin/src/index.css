@@ -78,3 +78,42 @@ button:focus-visible {
   color: white;
 
 }
+
+body {
+  position: relative; /* Required to position the heading relative to the body */
+}
+
+h1 {
+  position: absolute;
+  top: 30; /* Position at the top */
+  right: 0; /* Position at the right */
+}
+
+body {
+  background-image: url('img/background.jpg'); /* background image */
+  background-size: cover; /* Adjust the size as needed */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-attachment: fixed; /* Optional: Keep the image fixed while scrolling */
+  color: white; /* Set text color to white for readability */
+}
+
+.apply-button {
+  display: block; /* Ensure the button is on a new line */
+  margin-top: 150px; /* Add space between the heading and button */
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Style for the "Accommodations" section */
+    #aboutUs {
+      background-color: #f4f4f4;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-top: 20px; /* Add margin to separate from the previous section */
+    }
+
