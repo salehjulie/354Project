@@ -1,28 +1,20 @@
 import useLogout from "hooks/useLogout";
+import useLogin from "hooks/useLogin";
 import pb from "lb/pocketbase";
-import { reset } from "nodemon";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function Auth() {
   const logout = useLogout;
-  const [isLoading, setLoading] = useState(false);
-  const [dummy, setDummy] = useState(0);
-  const { register, handleSubmit } = useForm();
+  const { mutate: login, isLoading, isError } = useLogin();
+
+  const { register, handleSubmit, reset } = useForm();
 
   const isLoggedIn = pb.authStore.isValid;
 
-  async function login(data) {
-    setLoading(true);
-    try {
-      const authData = await pb
-        .collection("users")
-        .authwithPassword(data.email, data.password);
-    } catch (e) {
-      alert(e);
-    }
-    setLoading(false);
+  async function onSubmit(data) {
+    login({ email: data.email, password: data.password });
     reset();
+    
   }
 
   if (isLoggedIn)
